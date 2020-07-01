@@ -2,10 +2,21 @@ import React, { useState } from "react";
 
 function App() {
   const [url, setUrl] = useState("#");
+  const [text, setText] = useState("");
 
   const Upload = (e) => {
     const file = e.target.files;
     setUrl(URL.createObjectURL(file[0]));
+  };
+
+  const ClickMe = () => {
+    let image_url = "default";
+    if (window.Android) {
+      image_url = window.Android.getImageUrl();
+    } else {
+      image_url = "Desktop View";
+    }
+    setText(image_url);
   };
   return (
     <div className="container-fluid">
@@ -23,6 +34,10 @@ function App() {
         <img src={url} />
         <div>{url}</div>
       </div>
+      <br />
+      <button onClick={ClickMe}>Click Me</button>
+      <br />
+      <div>{text}</div>
     </div>
   );
 }
