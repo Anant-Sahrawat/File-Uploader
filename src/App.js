@@ -31,8 +31,16 @@ function App() {
             onChange={Upload}
           />
         </div>
-        <img src={url} />
-        <video src={url} />
+        <img src={url} alt="didn't work" />
+        <video
+          autoplay
+          muted
+          loop
+          src={url}
+          height="100%"
+          width="100%"
+          preload="auto"
+        />
         <div>{url}</div>
       </div>
       <br />
