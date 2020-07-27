@@ -32,6 +32,7 @@ function App() {
           />
         </div>
         <img src={url} />
+        <video src={url} />
         <div>{url}</div>
       </div>
       <br />
