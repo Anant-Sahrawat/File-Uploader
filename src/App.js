@@ -30,6 +30,13 @@ function App() {
             type="file"
             onChange={Upload}
           />
+          <input
+            placeholder={"Linking Image"}
+            type="file"
+            accept="image/*"
+            capture
+            onChange={Upload}
+          />
         </div>
         <img src={url} alt="didn't work" />
         <video
